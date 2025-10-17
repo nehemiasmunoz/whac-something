@@ -5,6 +5,7 @@
 }
 body {
   display: flex;
+  background-color: cornflowerblue;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -13,49 +14,57 @@ body {
 header {
   padding: 1rem;
   display: flex;
-  flex-direction: column;
+  align-items: baseline;
   gap: 1.4rem;
   h1 {
     align-self: center;
+    font-size: 3em;
+    letter-spacing: 6px;
   }
 }
 main {
   width: 100%;
+  max-width: 1024px;
+  height: 100dvh;
+  border: 2px solid black;
+  background-image: url("/assets/images/handpaintedwall2.png");
+
+  background-size: 50px;
+  background-position: center;
 }
 
 .layout {
+  padding: 3rem;
   display: grid;
+  place-items: center;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  gap: 0.3rem;
+  gap: 2rem;
 }
 
 .square {
   text-align: center;
   min-width: 100px;
+  max-width: 200px;
   width: 100%;
-  min-height: 150px;
+  height: 150px;
+  overflow: hidden;
+  border: 2px solid brown;
+  outline: 1px solid rebeccapurple;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
-}
-
-.hole {
-  background-color: black;
-  min-height: 20%;
-  border-radius: 15px 15px 0 0;
-  z-index: 1;
+  justify-content: end;
+  background-color: rgb(88, 118, 236);
+  border: 1rem solid whitesmoke;
 }
 
 .monster {
-  align-self: center;
-  width: 50%;
-  min-height: 80%;
-  background-color: blue;
-
   transition: 0.2s;
-  border-radius: 10px 10px 0 0;
-  transform: translate(0px, 100px);
+  position: relative;
+  transform: translate(0px, 80%);
+  img {
+    width: 100%;
+  }
 }
 
 .disable {
@@ -67,4 +76,6 @@ main {
   letter-spacing: 4px;
   font-weight: 700;
   padding: 1rem 2rem;
+  cursor: pointer;
+  border-radius: 5px;
 }
